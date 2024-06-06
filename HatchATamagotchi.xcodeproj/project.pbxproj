@@ -10,9 +10,13 @@
 		B81F4E672C114DAD0061FA51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E662C114DAD0061FA51 /* AppDelegate.swift */; };
 		B81F4E692C114DAD0061FA51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E682C114DAD0061FA51 /* SceneDelegate.swift */; };
 		B81F4E6B2C114DAD0061FA51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E6A2C114DAD0061FA51 /* ViewController.swift */; };
-		B81F4E6E2C114DAD0061FA51 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B81F4E6D2C114DAD0061FA51 /* Base */; };
 		B81F4E702C114DAF0061FA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B81F4E6F2C114DAF0061FA51 /* Assets.xcassets */; };
 		B81F4E732C114DAF0061FA51 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B81F4E722C114DAF0061FA51 /* Base */; };
+		B81F4E7C2C114DE70061FA51 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = B81F4E7B2C114DE70061FA51 /* Toast */; };
+		B81F4E7F2C114DF70061FA51 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B81F4E7E2C114DF70061FA51 /* Kingfisher */; };
+		B81F4E822C114E0E0061FA51 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B81F4E812C114E0E0061FA51 /* SnapKit */; };
+		B81F4E852C114E190061FA51 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B81F4E842C114E190061FA51 /* Alamofire */; };
+		B81F4E882C1150130061FA51 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B81F4E872C1150130061FA51 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +24,10 @@
 		B81F4E662C114DAD0061FA51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B81F4E682C114DAD0061FA51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B81F4E6A2C114DAD0061FA51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B81F4E6D2C114DAD0061FA51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B81F4E6F2C114DAF0061FA51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B81F4E722C114DAF0061FA51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B81F4E742C114DAF0061FA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B81F4E872C1150130061FA51 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B81F4E822C114E0E0061FA51 /* SnapKit in Frameworks */,
+				B81F4E852C114E190061FA51 /* Alamofire in Frameworks */,
+				B81F4E7F2C114DF70061FA51 /* Kingfisher in Frameworks */,
+				B81F4E7C2C114DE70061FA51 /* Toast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +48,7 @@
 		B81F4E5A2C114DAD0061FA51 = {
 			isa = PBXGroup;
 			children = (
+				B81F4E872C1150130061FA51 /* .gitignore */,
 				B81F4E652C114DAD0061FA51 /* HatchATamagotchi */,
 				B81F4E642C114DAD0061FA51 /* Products */,
 			);
@@ -56,15 +65,22 @@
 		B81F4E652C114DAD0061FA51 /* HatchATamagotchi */ = {
 			isa = PBXGroup;
 			children = (
-				B81F4E662C114DAD0061FA51 /* AppDelegate.swift */,
-				B81F4E682C114DAD0061FA51 /* SceneDelegate.swift */,
+				B81F4E862C114E390061FA51 /* App */,
 				B81F4E6A2C114DAD0061FA51 /* ViewController.swift */,
-				B81F4E6C2C114DAD0061FA51 /* Main.storyboard */,
 				B81F4E6F2C114DAF0061FA51 /* Assets.xcassets */,
 				B81F4E712C114DAF0061FA51 /* LaunchScreen.storyboard */,
 				B81F4E742C114DAF0061FA51 /* Info.plist */,
 			);
 			path = HatchATamagotchi;
+			sourceTree = "<group>";
+		};
+		B81F4E862C114E390061FA51 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B81F4E662C114DAD0061FA51 /* AppDelegate.swift */,
+				B81F4E682C114DAD0061FA51 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +99,12 @@
 			dependencies = (
 			);
 			name = HatchATamagotchi;
+			packageProductDependencies = (
+				B81F4E7B2C114DE70061FA51 /* Toast */,
+				B81F4E7E2C114DF70061FA51 /* Kingfisher */,
+				B81F4E812C114E0E0061FA51 /* SnapKit */,
+				B81F4E842C114E190061FA51 /* Alamofire */,
+			);
 			productName = HatchATamagotchi;
 			productReference = B81F4E632C114DAD0061FA51 /* HatchATamagotchi.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +133,12 @@
 				Base,
 			);
 			mainGroup = B81F4E5A2C114DAD0061FA51;
+			packageReferences = (
+				B81F4E7A2C114DE70061FA51 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				B81F4E7D2C114DF70061FA51 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B81F4E802C114E0E0061FA51 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B81F4E832C114E190061FA51 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = B81F4E642C114DAD0061FA51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,8 +154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B81F4E702C114DAF0061FA51 /* Assets.xcassets in Resources */,
+				B81F4E882C1150130061FA51 /* .gitignore in Resources */,
 				B81F4E732C114DAF0061FA51 /* Base in Resources */,
-				B81F4E6E2C114DAD0061FA51 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +175,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B81F4E6C2C114DAD0061FA51 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B81F4E6D2C114DAD0061FA51 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B81F4E712C114DAF0061FA51 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -218,7 +238,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -297,9 +317,7 @@
 				INFOPLIST_FILE = HatchATamagotchi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +325,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yeji.HatchATamagotchi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -325,9 +347,7 @@
 				INFOPLIST_FILE = HatchATamagotchi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +355,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yeji.HatchATamagotchi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -363,6 +387,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B81F4E7A2C114DE70061FA51 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		B81F4E7D2C114DF70061FA51 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+		B81F4E802C114E0E0061FA51 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		B81F4E832C114E190061FA51 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B81F4E7B2C114DE70061FA51 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B81F4E7A2C114DE70061FA51 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		B81F4E7E2C114DF70061FA51 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B81F4E7D2C114DF70061FA51 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		B81F4E812C114E0E0061FA51 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B81F4E802C114E0E0061FA51 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		B81F4E842C114E190061FA51 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B81F4E832C114E190061FA51 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B81F4E5B2C114DAD0061FA51 /* Project object */;
 }
