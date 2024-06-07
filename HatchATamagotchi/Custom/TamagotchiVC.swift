@@ -33,6 +33,10 @@ class TamagotchiVC: UIViewController, NavigationTitle {
         super.viewDidLoad()
         
         view.backgroundColor = DefaultColor.background
+        
+        let textAttribute = [NSAttributedString.Key.foregroundColor: DefaultColor.font]
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
         navigationItem.title = navigationTitle
+        navigationController?.navigationBar.tintColor = DefaultColor.tintColor
     }
 }

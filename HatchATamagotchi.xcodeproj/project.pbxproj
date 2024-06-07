@@ -26,6 +26,8 @@
 		B81F4EA42C1170F70061FA51 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA32C1170F70061FA51 /* Tamagotchi.swift */; };
 		B81F4EA62C117D850061FA51 /* InitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA52C117D850061FA51 /* InitCollectionViewCell.swift */; };
 		B81F4EA82C117F7E0061FA51 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA72C117F7E0061FA51 /* CharacterView.swift */; };
+		B81F4EAA2C12B3210061FA51 /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA92C12B3210061FA51 /* MainTextField.swift */; };
+		B81F4EAC2C12D6CA0061FA51 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EAB2C12D6CA0061FA51 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		B81F4EA32C1170F70061FA51 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 		B81F4EA52C117D850061FA51 /* InitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCollectionViewCell.swift; sourceTree = "<group>"; };
 		B81F4EA72C117F7E0061FA51 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		B81F4EA92C12B3210061FA51 /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
+		B81F4EAB2C12D6CA0061FA51 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				B81F4E8B2C1151A10061FA51 /* DefaultLayout.swift */,
 				B81F4E8D2C11548F0061FA51 /* TamagotchiVC.swift */,
 				B81F4EA72C117F7E0061FA51 /* CharacterView.swift */,
+				B81F4EA92C12B3210061FA51 /* MainTextField.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			children = (
 				B81F4E942C115AAA0061FA51 /* User.swift */,
 				B81F4EA32C1170F70061FA51 /* Tamagotchi.swift */,
+				B81F4EAB2C12D6CA0061FA51 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			files = (
 				B81F4E8E2C11548F0061FA51 /* TamagotchiVC.swift in Sources */,
 				B81F4EA62C117D850061FA51 /* InitCollectionViewCell.swift in Sources */,
+				B81F4EAA2C12B3210061FA51 /* MainTextField.swift in Sources */,
 				B81F4E8C2C1151A10061FA51 /* DefaultLayout.swift in Sources */,
 				B81F4E9A2C115FCF0061FA51 /* PopUpViewController.swift in Sources */,
 				B81F4E982C115F1C0061FA51 /* InitViewController.swift in Sources */,
@@ -261,6 +268,7 @@
 				B81F4E692C114DAD0061FA51 /* SceneDelegate.swift in Sources */,
 				B81F4E952C115AAA0061FA51 /* User.swift in Sources */,
 				B81F4EA02C1160870061FA51 /* MainViewController.swift in Sources */,
+				B81F4EAC2C12D6CA0061FA51 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

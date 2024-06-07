@@ -8,6 +8,6 @@
 import Foundation
 
 struct User {
-    let name: String
-    var tamagotchi: Tamagotchi?
+    var name: String = "대장"
+    var tamagotchi: Tamagotchi = Tamagotchi(type: .none)
 }

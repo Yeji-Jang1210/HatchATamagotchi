@@ -56,16 +56,43 @@ enum TamagotchiType: Int, CaseIterable {
 struct Tamagotchi {
     
     let type: TamagotchiType
-    let feed: Int
-    let water: Int
+    var feed: Int = 0
+    var water: Int = 0
     
     var level: Int {
-        guard feed != 0, water != 0 else {
-            return 1
+        var count = 0
+        
+        if feed != 0 {
+            count += (feed / 5)
         }
         
-        let lev = (feed/5) + (water/2)
-        return lev > 10 ? 10 : lev
+        if water != 0 {
+            count += (water / 2)
+        }
+        
+        switch count {
+        case 0..<20:
+            return 1
+        case 20..<30:
+            return 2
+        case 30..<40:
+            return 3
+        case 40..<50:
+            return 4
+        case 50..<60:
+            return 5
+        case 60..<70:
+            return 6
+        case 70..<80:
+            return 7
+        case 80..<90:
+            return 8
+        case 90..<100:
+            return 9
+        default:
+            return 10
+        }
+        
     }
     
     var levelImage: UIImage? {
@@ -74,5 +101,9 @@ struct Tamagotchi {
             return nil
         }
         return image
+    }
+    
+    var infoText: String {
+        return "LV\(level) · 밥알 \(feed)개 · 물방울 \(water)개"
     }
 }

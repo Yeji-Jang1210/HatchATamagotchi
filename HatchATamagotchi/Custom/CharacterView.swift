@@ -52,6 +52,12 @@ class CharacterView: UIView, ConfigurableView {
         }
     }
     
+    var name: String? {
+        didSet {
+            nameLabel.setTitle(name, for: .normal)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureHierarchy()

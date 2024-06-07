@@ -34,6 +34,8 @@ class PopUpViewController: UIViewController, ConfigurableView {
         object.textColor = DefaultColor.font
         object.numberOfLines = 0
         object.textAlignment = .center
+        object.adjustsFontSizeToFitWidth = true
+        object.minimumScaleFactor = 0.8
         return object
     }()
     
@@ -72,7 +74,7 @@ class PopUpViewController: UIViewController, ConfigurableView {
     var character: TamagotchiType? {
         didSet {
             characterView.imageView.image = character?.image
-            characterView.nameLabel.setTitle(character?.name, for: .normal)
+            characterView.name = character?.name
             descriptionLabel.text = character?.description
         }
     }
@@ -110,7 +112,7 @@ class PopUpViewController: UIViewController, ConfigurableView {
         
         characterView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalTo(backgroundView.snp.centerY).dividedBy(1.5)
+            make.centerY.lessThanOrEqualTo(backgroundView.snp.centerY).dividedBy(1.5)
             make.width.equalTo(backgroundView.snp.width).multipliedBy(0.4)
         }
         
@@ -124,7 +126,7 @@ class PopUpViewController: UIViewController, ConfigurableView {
         descriptionLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(seperatorView.snp.horizontalEdges)
             make.top.equalTo(seperatorView.snp.bottom).offset(20)
-            make.bottom.greaterThanOrEqualTo(buttonSeperatorView.snp.top).offset(-20)
+            make.bottom.equalTo(buttonSeperatorView.snp.top).offset(-20)
         }
         
         buttonSeperatorView.snp.makeConstraints { make in
@@ -155,6 +157,15 @@ class PopUpViewController: UIViewController, ConfigurableView {
     }
     
     @objc func startButtonTapped(_ sender: UIButton){
+        guard let type = character else { return }
         
+        let user = User(tamagotchi: Tamagotchi(type: type))
+        let vc = MainViewController(navigationTitle: user.name)
+        vc.user = user
+        
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .overFullScreen
+        
+        present(nvc, animated: true)
     }
 }
