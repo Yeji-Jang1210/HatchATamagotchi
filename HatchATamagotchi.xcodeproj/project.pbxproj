@@ -28,10 +28,12 @@
 		B81F4EA02C1160870061FA51 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E9F2C1160870061FA51 /* MainViewController.swift */; };
 		B81F4EA22C1160960061FA51 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA12C1160960061FA51 /* SettingViewController.swift */; };
 		B81F4EA42C1170F70061FA51 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA32C1170F70061FA51 /* Tamagotchi.swift */; };
-		B81F4EA62C117D850061FA51 /* InitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA52C117D850061FA51 /* InitCollectionViewCell.swift */; };
+		B81F4EA62C117D850061FA51 /* SelectTamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA52C117D850061FA51 /* SelectTamagotchiCollectionViewCell.swift */; };
 		B81F4EA82C117F7E0061FA51 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA72C117F7E0061FA51 /* CharacterView.swift */; };
 		B81F4EAA2C12B3210061FA51 /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA92C12B3210061FA51 /* MainTextField.swift */; };
 		B81F4EAC2C12D6CA0061FA51 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EAB2C12D6CA0061FA51 /* Message.swift */; };
+		B8E2D0142C15FDCF00009721 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = B8E2D0132C15FDCF00009721 /* SwiftyUserDefaults */; };
+		B8E2D0172C15FE3300009721 /* DefaultsKey+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E2D0162C15FE3300009721 /* DefaultsKey+Extesion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +56,11 @@
 		B81F4E9F2C1160870061FA51 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B81F4EA12C1160960061FA51 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B81F4EA32C1170F70061FA51 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
-		B81F4EA52C117D850061FA51 /* InitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCollectionViewCell.swift; sourceTree = "<group>"; };
+		B81F4EA52C117D850061FA51 /* SelectTamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
 		B81F4EA72C117F7E0061FA51 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		B81F4EA92C12B3210061FA51 /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
 		B81F4EAB2C12D6CA0061FA51 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B8E2D0162C15FE3300009721 /* DefaultsKey+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKey+Extesion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 				B81F4E822C114E0E0061FA51 /* SnapKit in Frameworks */,
 				B81F4E852C114E190061FA51 /* Alamofire in Frameworks */,
 				B81F4E7F2C114DF70061FA51 /* Kingfisher in Frameworks */,
+				B8E2D0142C15FDCF00009721 /* SwiftyUserDefaults in Frameworks */,
 				B81F4E7C2C114DE70061FA51 /* Toast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +107,7 @@
 		B81F4E652C114DAD0061FA51 /* HatchATamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				B8E2D0152C15FE1E00009721 /* Extension */,
 				B81F4E962C115EFA0061FA51 /* View */,
 				B81F4E862C114E390061FA51 /* App */,
 				B81F4E912C115A9D0061FA51 /* Model */,
@@ -161,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B81F4E972C115F1C0061FA51 /* SelectTamagotchiViewController.swift */,
-				B81F4EA52C117D850061FA51 /* InitCollectionViewCell.swift */,
+				B81F4EA52C117D850061FA51 /* SelectTamagotchiCollectionViewCell.swift */,
 			);
 			path = Init;
 			sourceTree = "<group>";
@@ -192,6 +197,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		B8E2D0152C15FE1E00009721 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B8E2D0162C15FE3300009721 /* DefaultsKey+Extesion.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,6 +226,7 @@
 				B81F4E7E2C114DF70061FA51 /* Kingfisher */,
 				B81F4E812C114E0E0061FA51 /* SnapKit */,
 				B81F4E842C114E190061FA51 /* Alamofire */,
+				B8E2D0132C15FDCF00009721 /* SwiftyUserDefaults */,
 			);
 			productName = HatchATamagotchi;
 			productReference = B81F4E632C114DAD0061FA51 /* HatchATamagotchi.app */;
@@ -247,6 +261,7 @@
 				B81F4E7D2C114DF70061FA51 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B81F4E802C114E0E0061FA51 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B81F4E832C114E190061FA51 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B8E2D0122C15FDCF00009721 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
 			);
 			productRefGroup = B81F4E642C114DAD0061FA51 /* Products */;
 			projectDirPath = "";
@@ -276,7 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B81F4E8E2C11548F0061FA51 /* TamagotchiVC.swift in Sources */,
-				B81F4EA62C117D850061FA51 /* InitCollectionViewCell.swift in Sources */,
+				B81F4EA62C117D850061FA51 /* SelectTamagotchiCollectionViewCell.swift in Sources */,
 				B81F4EAA2C12B3210061FA51 /* MainTextField.swift in Sources */,
 				B81F4E8C2C1151A10061FA51 /* DefaultLayout.swift in Sources */,
 				B81F4E9A2C115FCF0061FA51 /* PopUpViewController.swift in Sources */,
@@ -291,6 +306,7 @@
 				B81F4E692C114DAD0061FA51 /* SceneDelegate.swift in Sources */,
 				B804EC712C15B4F4008FAD1A /* SettingType.swift in Sources */,
 				B81F4E952C115AAA0061FA51 /* User.swift in Sources */,
+				B8E2D0172C15FE3300009721 /* DefaultsKey+Extesion.swift in Sources */,
 				B81F4EA02C1160870061FA51 /* MainViewController.swift in Sources */,
 				B81F4EAC2C12D6CA0061FA51 /* Message.swift in Sources */,
 			);
@@ -545,6 +561,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		B8E2D0122C15FDCF00009721 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -567,6 +591,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B81F4E832C114E190061FA51 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		B8E2D0132C15FDCF00009721 /* SwiftyUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8E2D0122C15FDCF00009721 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
+			productName = SwiftyUserDefaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

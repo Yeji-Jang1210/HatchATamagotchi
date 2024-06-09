@@ -7,9 +7,11 @@
 
 import UIKit
 import SnapKit
+import SwiftyUserDefaults
 
 class PopUpViewController: UIViewController, ConfigurableView {
-    
+
+//MARK: - object
     let backgroundView: UIView = {
         let object = UIView()
         object.backgroundColor = DefaultColor.background
@@ -69,7 +71,7 @@ class PopUpViewController: UIViewController, ConfigurableView {
         object.backgroundColor = .clear
         return object
     }()
-    
+//MARK: - properties
     var character: TamagotchiType? {
         didSet {
             characterView.imageView.image = character?.image
@@ -83,7 +85,7 @@ class PopUpViewController: UIViewController, ConfigurableView {
             startButton.setTitle(selectType?.confirmButtonTitle, for: .normal)
         }
     }
-    
+//MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
@@ -94,7 +96,7 @@ class PopUpViewController: UIViewController, ConfigurableView {
         
         bindAction()
     }
-    
+//MARK: - configure
     func configureHierarchy() {
         view.addSubview(backgroundView)
         
@@ -148,7 +150,7 @@ class PopUpViewController: UIViewController, ConfigurableView {
     }
     
     func configureUI() { }
-    
+//MARK: - function
     func bindAction(){
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissPopUpView))
         view.addGestureRecognizer(gesture)
@@ -164,10 +166,29 @@ class PopUpViewController: UIViewController, ConfigurableView {
     @objc func startButtonTapped(_ sender: UIButton){
         guard let characterType = character, let selectType = selectType else { return }
         
-        let user = User(tamagotchi: Tamagotchi(type: characterType))
-        let vc = MainViewController(navigationTitle: user.name)
-        vc.user = user
-        
+        switch selectType {
+        case .initSelect:
+            
+            Defaults.user = "대장"
+            Defaults.tamagotchi = characterType
+            
+            let vc = MainViewController(navigationTitle: Defaults.user!)
+            pushNavigationView(vc: vc)
+            
+        case .change:
+            
+            //initialize tamagotchi
+            Defaults.tamagotchi = characterType
+            Defaults.feed = 0
+            Defaults.water = 0
+            
+            let vc = MainViewController(navigationTitle: Defaults.user!)
+            
+            pushNavigationView(vc: vc)
+        }
+    }
+    
+    private func pushNavigationView(vc: UIViewController){
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .overFullScreen
         

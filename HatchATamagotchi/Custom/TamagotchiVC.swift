@@ -8,7 +8,7 @@
 import UIKit
 
 protocol NavigationTitle {
-    var navigationTitle: String { get set }
+    var navigationTitle: String? { get set }
 }
 
 protocol ConfigurableView {
@@ -18,10 +18,12 @@ protocol ConfigurableView {
 }
 
 class TamagotchiVC: UIViewController, NavigationTitle {
-    var navigationTitle: String
+    var navigationTitle: String?
     
-    required init(navigationTitle: String) {
-        self.navigationTitle = navigationTitle
+    required init(navigationTitle: String? = nil) {
+        if let navigationTitle {
+            self.navigationTitle = navigationTitle
+        }
         super.init(nibName: nil, bundle: nil)
     }
     

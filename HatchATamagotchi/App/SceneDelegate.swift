@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,15 +17,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        let vc = SelectTamagotchiViewController(navigationTitle: SelectTamagotciVCType.initSelect.navigationTitle)
-        vc.type = SelectTamagotciVCType.initSelect
-        let nvc = UINavigationController(rootViewController: vc)
+        if let user = Defaults.user {
+            let vc = MainViewController()
+            let nvc = UINavigationController(rootViewController: vc)
+            
+            //entry point
+            window?.rootViewController = nvc
+            
+            //show
+            window?.makeKeyAndVisible()
+        } else {
+            
+            let vc = SelectTamagotchiViewController(navigationTitle: SelectTamagotciVCType.initSelect.navigationTitle)
+            vc.type = SelectTamagotciVCType.initSelect
+            let nvc = UINavigationController(rootViewController: vc)
+            
+            //entry point
+            window?.rootViewController = nvc
+            
+            //show
+            window?.makeKeyAndVisible()
+        }
         
-        //entry point
-        window?.rootViewController = nvc
-        
-        //show
-        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

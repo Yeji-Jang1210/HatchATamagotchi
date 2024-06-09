@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 struct TamagotchiList {
     static var list = TamagotchiType.allCases
 }
 
-enum TamagotchiType: Int, CaseIterable {
+enum TamagotchiType: Int, CaseIterable, DefaultsSerializable {
     case prickly = 1
     case beaming = 2
     case twinkling = 3
@@ -55,9 +56,29 @@ enum TamagotchiType: Int, CaseIterable {
 
 struct Tamagotchi {
     
-    let type: TamagotchiType
-    var feed: Int = 0
-    var water: Int = 0
+    var type: TamagotchiType {
+        didSet {
+            type = Defaults.tamagotchi
+        }
+    }
+    var feed: Int {
+        get {
+            return Defaults.feed
+        }
+        
+        set {
+            Defaults.feed = newValue
+        }
+    }
+    var water: Int{
+        get {
+            return Defaults.water
+        }
+        
+        set {
+            Defaults.water = newValue
+        }
+    }
     
     var level: Int {
         var count = 0

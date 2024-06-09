@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftyUserDefaults
+
 
 struct User {
-    var name: String = "대장"
-    var tamagotchi: Tamagotchi = Tamagotchi(type: .none)
+    let name: String
+    let tamagotchi: Tamagotchi
 }

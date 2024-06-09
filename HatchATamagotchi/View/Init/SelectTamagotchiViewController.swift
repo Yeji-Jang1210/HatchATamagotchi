@@ -49,7 +49,7 @@ class SelectTamagotchiViewController: TamagotchiVC, ConfigurableView {
     func configureCollectionView(){
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(InitCollectionViewCell.self, forCellWithReuseIdentifier: InitCollectionViewCell.identifier)
+        collectionView.register(SelectTamagotchiCollectionViewCell.self, forCellWithReuseIdentifier: SelectTamagotchiCollectionViewCell.identifier)
     }
     
     @objc func tamagotchiTapped(_ sender: UIButton){
@@ -76,7 +76,7 @@ extension SelectTamagotchiViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InitCollectionViewCell.identifier, for: indexPath) as! InitCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectTamagotchiCollectionViewCell.identifier, for: indexPath) as! SelectTamagotchiCollectionViewCell
         
         switch indexPath.row {
         case 0:

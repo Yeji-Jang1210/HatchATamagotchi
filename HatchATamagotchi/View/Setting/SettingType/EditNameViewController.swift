@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import SwiftyUserDefaults
+import Toast
 
 class EditNameViewController: TamagotchiVC {
     
@@ -28,7 +30,6 @@ class EditNameViewController: TamagotchiVC {
     }()
     
 //MARK: - property
-    var user: User?
 
 //MARK: - life cycle
     override func viewDidLoad() {
@@ -59,6 +60,10 @@ class EditNameViewController: TamagotchiVC {
     
     func configureUI(){
         configureNavigationBar()
+        textField.text = Defaults.user
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(activeEndEditing))
+        view.addGestureRecognizer(gesture)
     }
     
     func configureNavigationBar(){
@@ -67,7 +72,17 @@ class EditNameViewController: TamagotchiVC {
     
 //MARK: - function
     @objc func editUserName(){
-        navigationController?.popToRootViewController(animated: true)
+        guard let text = textField.text, !text.isEmpty else {
+            let point = CGPoint(x: view.bounds.width / 2 , y: textField.frame.origin.y + 100)
+            view.makeToast("올바른 이름을 입력하세요", point: point, title: nil, image: nil, completion: nil)
+            return
+        }
+        
+        Defaults.user = text
+        navigationController?.popViewController(animated: true)
     }
     
+    @objc func activeEndEditing(){
+        view.endEditing(true)
+    }
 }

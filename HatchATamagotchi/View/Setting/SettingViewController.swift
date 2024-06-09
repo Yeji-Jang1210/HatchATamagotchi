@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftyUserDefaults
 
 class SettingViewController: TamagotchiVC, ConfigurableView {
 //MARK: - object
@@ -14,8 +15,6 @@ class SettingViewController: TamagotchiVC, ConfigurableView {
         let object = UITableView()
         return object
     }()
-
-    public var user: User?
     
 //MARK: - lifeCycle
     override func viewDidLoad() {
@@ -71,7 +70,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch type {
         case .editName:
-            cell.setData(type: type, editName: user?.name)
+            cell.setData(type: type, editName: Defaults.user)
         default:
             cell.setData(type: type)
         }
@@ -85,9 +84,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch type {
         case .editName:
-            guard let user = user else { return }
-            let vc = EditNameViewController(navigationTitle: "\(user.name)님 이름 정하기")
-            vc.user = user
+            guard let user = Defaults.user else { return }
+            let vc = EditNameViewController(navigationTitle: "\(user)님 이름 정하기")
             navigationController?.pushViewController(vc, animated: true)
         case .changeTamagotchi:
             let vc = SelectTamagotchiViewController(navigationTitle: SelectTamagotciVCType.change.navigationTitle)
@@ -95,7 +93,35 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(vc, animated: true)
             return
         case .reset:
+            showAlert()
             return
         }
+    }
+    
+    func showAlert(){
+        let alert = UIAlertController(title: "데이터 초기화", message: "정말 처음부터 시작하실 건가용?", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "웅", style: .default) { action in
+            let vc = SelectTamagotchiViewController(navigationTitle: SelectTamagotciVCType.initSelect.navigationTitle)
+            vc.type = SelectTamagotciVCType.initSelect
+            
+            let nvc = UINavigationController(rootViewController: vc)
+            nvc.modalPresentationStyle = .overFullScreen
+            
+            //initialize tamagotchi
+            Defaults.user = nil
+            Defaults.tamagotchi = .none
+            Defaults.feed = 0
+            Defaults.water = 0
+            
+            self.present(nvc, animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "아닝", style: .cancel)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        
+        present(alert, animated: true)
     }
 }

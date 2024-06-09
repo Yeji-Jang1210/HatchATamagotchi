@@ -1,5 +1,5 @@
 //
-//  InitCollectionViewCell.swift
+//  SelectTamagotchiCollectionViewCell.swift
 //  HatchATamagotchi
 //
 //  Created by 장예지 on 6/6/24.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class InitCollectionViewCell: UICollectionViewCell {
+class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
     
-    static var identifier: String = String(describing: InitCollectionViewCell.self)
+    static var identifier: String = String(describing: SelectTamagotchiCollectionViewCell.self)
     
     let characterView: CharacterView = {
         let object = CharacterView()

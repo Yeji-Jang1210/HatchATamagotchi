@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftyUserDefaults
 import Toast
 
 class MainViewController: TamagotchiVC, ConfigurableView {
@@ -31,7 +32,6 @@ class MainViewController: TamagotchiVC, ConfigurableView {
         object.textColor = DefaultColor.font
         object.textAlignment = .center
         object.numberOfLines = 0
-        object.text = Message.list.randomElement()
         return object
     }()
     
@@ -63,7 +63,7 @@ class MainViewController: TamagotchiVC, ConfigurableView {
     }()
     
 //MARK: - property
-    var user: User?
+    lazy var tamagotchi = Tamagotchi(type: Defaults.tamagotchi)
     
  //MARK: - life cycle
     override func viewDidLoad() {
@@ -75,9 +75,18 @@ class MainViewController: TamagotchiVC, ConfigurableView {
         
         bindAction()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let user = Defaults.user {
+            self.navigationItem.title = "\(user)님의 다마고치"
+        }
+        messageLabel.text = Message.list.randomElement()
+    }
+    
 //MARK: - configure
     func configureNavigationBar() {
-        self.navigationItem.title = "\(navigationTitle)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: DefaultIcon.person.icon, style: .done, target: self, action: #selector(settingButtonTapped))
     }
     
@@ -138,9 +147,9 @@ class MainViewController: TamagotchiVC, ConfigurableView {
     }
     
     func configureUI() {
-        characterView.imageView.image = user?.tamagotchi.levelImage
-        characterView.name = user?.tamagotchi.type.name
-        characterInfoLabel.text = user?.tamagotchi.infoText
+        characterView.imageView.image = tamagotchi.levelImage
+        characterView.name = tamagotchi.type.name
+        characterInfoLabel.text = tamagotchi.infoText
     }
 //MARK: - function
     func bindAction(){
@@ -150,24 +159,23 @@ class MainViewController: TamagotchiVC, ConfigurableView {
     
     @objc func settingButtonTapped(){
         let vc = SettingViewController(navigationTitle: "설정")
-        vc.user = user
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func giveCareButtonTapped(_ sender: UIButton){
         switch sender.tag {
         case 0:
-            user?.tamagotchi.feed += convertTextFieldTextToInt(feedTextField.text)
+            Defaults.feed += convertTextFieldTextToInt(feedTextField.text)
             feedTextField.text = ""
         case 1:
-            user?.tamagotchi.water += convertTextFieldTextToInt(waterTextField.text)
+            Defaults.water += convertTextFieldTextToInt(waterTextField.text)
             waterTextField.text = ""
         default:
             return
         }
         
-        characterInfoLabel.text = user?.tamagotchi.infoText
-        characterView.imageView.image = user?.tamagotchi.levelImage
+        characterInfoLabel.text = tamagotchi.infoText
+        characterView.imageView.image = tamagotchi.levelImage
         messageLabel.text = Message.list.randomElement()
     }
     
