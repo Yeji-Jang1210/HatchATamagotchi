@@ -16,7 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        let vc = InitViewController(navigationTitle: "다마고치 선택하기")
+        let vc = SelectTamagotchiViewController(navigationTitle: SelectTamagotciVCType.initSelect.navigationTitle)
+        vc.type = SelectTamagotciVCType.initSelect
         let nvc = UINavigationController(rootViewController: vc)
         
         //entry point

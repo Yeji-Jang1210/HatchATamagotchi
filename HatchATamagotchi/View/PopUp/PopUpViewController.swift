@@ -64,7 +64,6 @@ class PopUpViewController: UIViewController, ConfigurableView {
     
     let startButton: UIButton = {
         let object = UIButton(type: .system)
-        object.setTitle("시작하기", for: .normal)
         object.setTitleColor(DefaultColor.font, for: .normal)
         object.titleLabel?.font = DefaultFont.medium
         object.backgroundColor = .clear
@@ -76,6 +75,12 @@ class PopUpViewController: UIViewController, ConfigurableView {
             characterView.imageView.image = character?.image
             characterView.name = character?.name
             descriptionLabel.text = character?.description
+        }
+    }
+    
+    var selectType: SelectTamagotciVCType? {
+        didSet {
+            startButton.setTitle(selectType?.confirmButtonTitle, for: .normal)
         }
     }
     
@@ -157,9 +162,9 @@ class PopUpViewController: UIViewController, ConfigurableView {
     }
     
     @objc func startButtonTapped(_ sender: UIButton){
-        guard let type = character else { return }
+        guard let characterType = character, let selectType = selectType else { return }
         
-        let user = User(tamagotchi: Tamagotchi(type: type))
+        let user = User(tamagotchi: Tamagotchi(type: characterType))
         let vc = MainViewController(navigationTitle: user.name)
         vc.user = user
         

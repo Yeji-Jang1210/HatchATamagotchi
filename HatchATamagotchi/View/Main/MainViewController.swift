@@ -10,7 +10,8 @@ import SnapKit
 import Toast
 
 class MainViewController: TamagotchiVC, ConfigurableView {
-    
+   
+//MARK: - object
     let messageBubbleBackgroundView: UIView = {
         let object = UIView()
         object.backgroundColor = .clear
@@ -61,8 +62,10 @@ class MainViewController: TamagotchiVC, ConfigurableView {
         return object
     }()
     
+//MARK: - property
     var user: User?
     
+ //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
@@ -72,7 +75,7 @@ class MainViewController: TamagotchiVC, ConfigurableView {
         
         bindAction()
     }
-    
+//MARK: - configure
     func configureNavigationBar() {
         self.navigationItem.title = "\(navigationTitle)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: DefaultIcon.person.icon, style: .done, target: self, action: #selector(settingButtonTapped))
@@ -139,14 +142,16 @@ class MainViewController: TamagotchiVC, ConfigurableView {
         characterView.name = user?.tamagotchi.type.name
         characterInfoLabel.text = user?.tamagotchi.infoText
     }
-    
+//MARK: - function
     func bindAction(){
         feedTextField.button.addTarget(self, action: #selector(giveCareButtonTapped), for: .touchUpInside)
         waterTextField.button.addTarget(self, action: #selector(giveCareButtonTapped), for: .touchUpInside)
     }
     
     @objc func settingButtonTapped(){
-        print(#function)
+        let vc = SettingViewController(navigationTitle: "설정")
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func giveCareButtonTapped(_ sender: UIButton){

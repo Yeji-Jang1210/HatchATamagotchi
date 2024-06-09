@@ -33,6 +33,7 @@ enum DefaultIcon: String {
     case pencil = "pencil"
     case moon = "moon.fill"
     case refresh = "arrow.clockwise"
+    case back = "chevron.left"
     
     var icon: UIImage? {
         switch self {

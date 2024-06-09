@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B804EC6F2C15B3ED008FAD1A /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804EC6E2C15B3ED008FAD1A /* SettingTableViewCell.swift */; };
+		B804EC712C15B4F4008FAD1A /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804EC702C15B4F4008FAD1A /* SettingType.swift */; };
+		B804EC742C15C1D3008FAD1A /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804EC732C15C1D3008FAD1A /* EditNameViewController.swift */; };
+		B804EC762C15C744008FAD1A /* SelectTamagotciVCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804EC752C15C744008FAD1A /* SelectTamagotciVCType.swift */; };
 		B81F4E672C114DAD0061FA51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E662C114DAD0061FA51 /* AppDelegate.swift */; };
 		B81F4E692C114DAD0061FA51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E682C114DAD0061FA51 /* SceneDelegate.swift */; };
 		B81F4E702C114DAF0061FA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B81F4E6F2C114DAF0061FA51 /* Assets.xcassets */; };
@@ -19,7 +23,7 @@
 		B81F4E8C2C1151A10061FA51 /* DefaultLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E8B2C1151A10061FA51 /* DefaultLayout.swift */; };
 		B81F4E8E2C11548F0061FA51 /* TamagotchiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E8D2C11548F0061FA51 /* TamagotchiVC.swift */; };
 		B81F4E952C115AAA0061FA51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E942C115AAA0061FA51 /* User.swift */; };
-		B81F4E982C115F1C0061FA51 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E972C115F1C0061FA51 /* InitViewController.swift */; };
+		B81F4E982C115F1C0061FA51 /* SelectTamagotchiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E972C115F1C0061FA51 /* SelectTamagotchiViewController.swift */; };
 		B81F4E9A2C115FCF0061FA51 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E992C115FCF0061FA51 /* PopUpViewController.swift */; };
 		B81F4EA02C1160870061FA51 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4E9F2C1160870061FA51 /* MainViewController.swift */; };
 		B81F4EA22C1160960061FA51 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA12C1160960061FA51 /* SettingViewController.swift */; };
@@ -31,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B804EC6E2C15B3ED008FAD1A /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		B804EC702C15B4F4008FAD1A /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
+		B804EC732C15C1D3008FAD1A /* EditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
+		B804EC752C15C744008FAD1A /* SelectTamagotciVCType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagotciVCType.swift; sourceTree = "<group>"; };
 		B81F4E632C114DAD0061FA51 /* HatchATamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HatchATamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81F4E662C114DAD0061FA51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B81F4E682C114DAD0061FA51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +49,7 @@
 		B81F4E8B2C1151A10061FA51 /* DefaultLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLayout.swift; sourceTree = "<group>"; };
 		B81F4E8D2C11548F0061FA51 /* TamagotchiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiVC.swift; sourceTree = "<group>"; };
 		B81F4E942C115AAA0061FA51 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		B81F4E972C115F1C0061FA51 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
+		B81F4E972C115F1C0061FA51 /* SelectTamagotchiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagotchiViewController.swift; sourceTree = "<group>"; };
 		B81F4E992C115FCF0061FA51 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		B81F4E9F2C1160870061FA51 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B81F4EA12C1160960061FA51 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B804EC722C15B642008FAD1A /* SettingType */ = {
+			isa = PBXGroup;
+			children = (
+				B804EC732C15C1D3008FAD1A /* EditNameViewController.swift */,
+			);
+			path = SettingType;
+			sourceTree = "<group>";
+		};
 		B81F4E5A2C114DAD0061FA51 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +140,8 @@
 				B81F4E942C115AAA0061FA51 /* User.swift */,
 				B81F4EA32C1170F70061FA51 /* Tamagotchi.swift */,
 				B81F4EAB2C12D6CA0061FA51 /* Message.swift */,
+				B804EC702C15B4F4008FAD1A /* SettingType.swift */,
+				B804EC752C15C744008FAD1A /* SelectTamagotciVCType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,7 +160,7 @@
 		B81F4E9B2C1160440061FA51 /* Init */ = {
 			isa = PBXGroup;
 			children = (
-				B81F4E972C115F1C0061FA51 /* InitViewController.swift */,
+				B81F4E972C115F1C0061FA51 /* SelectTamagotchiViewController.swift */,
 				B81F4EA52C117D850061FA51 /* InitCollectionViewCell.swift */,
 			);
 			path = Init;
@@ -167,7 +185,9 @@
 		B81F4E9E2C1160720061FA51 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				B804EC722C15B642008FAD1A /* SettingType */,
 				B81F4EA12C1160960061FA51 /* SettingViewController.swift */,
+				B804EC6E2C15B3ED008FAD1A /* SettingTableViewCell.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -260,12 +280,16 @@
 				B81F4EAA2C12B3210061FA51 /* MainTextField.swift in Sources */,
 				B81F4E8C2C1151A10061FA51 /* DefaultLayout.swift in Sources */,
 				B81F4E9A2C115FCF0061FA51 /* PopUpViewController.swift in Sources */,
-				B81F4E982C115F1C0061FA51 /* InitViewController.swift in Sources */,
+				B81F4E982C115F1C0061FA51 /* SelectTamagotchiViewController.swift in Sources */,
+				B804EC6F2C15B3ED008FAD1A /* SettingTableViewCell.swift in Sources */,
 				B81F4EA42C1170F70061FA51 /* Tamagotchi.swift in Sources */,
 				B81F4EA82C117F7E0061FA51 /* CharacterView.swift in Sources */,
 				B81F4E672C114DAD0061FA51 /* AppDelegate.swift in Sources */,
 				B81F4EA22C1160960061FA51 /* SettingViewController.swift in Sources */,
+				B804EC742C15C1D3008FAD1A /* EditNameViewController.swift in Sources */,
+				B804EC762C15C744008FAD1A /* SelectTamagotciVCType.swift in Sources */,
 				B81F4E692C114DAD0061FA51 /* SceneDelegate.swift in Sources */,
+				B804EC712C15B4F4008FAD1A /* SettingType.swift in Sources */,
 				B81F4E952C115AAA0061FA51 /* User.swift in Sources */,
 				B81F4EA02C1160870061FA51 /* MainViewController.swift in Sources */,
 				B81F4EAC2C12D6CA0061FA51 /* Message.swift in Sources */,

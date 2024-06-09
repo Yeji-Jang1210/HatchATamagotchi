@@ -1,5 +1,5 @@
 //
-//  InitViewController.swift
+//  SelectTamagotchiViewController.swift
 //  HatchATamagotchi
 //
 //  Created by 장예지 on 6/6/24.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Toast
 
-class InitViewController: TamagotchiVC, ConfigurableView {
+class SelectTamagotchiViewController: TamagotchiVC, ConfigurableView {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -21,6 +21,7 @@ class InitViewController: TamagotchiVC, ConfigurableView {
     }()
     
     let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    var type: SelectTamagotciVCType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +56,13 @@ class InitViewController: TamagotchiVC, ConfigurableView {
         print(sender.tag)
         if sender.tag >= 0 && sender.tag < 3 {
             let vc = PopUpViewController()
+            
             vc.modalTransitionStyle = .coverVertical
             vc.modalPresentationStyle = .overFullScreen
+            
+            vc.selectType = type
             vc.character = TamagotchiType(rawValue: sender.tag+1)!
+            
             present(vc, animated: true)
             return
         }
@@ -65,7 +70,7 @@ class InitViewController: TamagotchiVC, ConfigurableView {
     }
 }
 
-extension InitViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SelectTamagotchiViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
@@ -90,7 +95,7 @@ extension InitViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
-extension InitViewController: UICollectionViewDelegateFlowLayout {
+extension SelectTamagotchiViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         
