@@ -11,21 +11,18 @@ import SwiftyUserDefaults
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var vc: UIViewController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
         if let user = Defaults.user {
-            let vc = MainViewController()
-            let nvc = UINavigationController(rootViewController: vc)
+            vc = MainViewController()
+            let nvc = UINavigationController(rootViewController: vc!)
             
             //entry point
             window?.rootViewController = nvc
-            
-            //show
-            window?.makeKeyAndVisible()
         } else {
             
             let vc = SelectTamagotchiViewController(navigationTitle: SelectTamagotciVCType.initSelect.navigationTitle)
@@ -34,10 +31,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             //entry point
             window?.rootViewController = nvc
-            
-            //show
-            window?.makeKeyAndVisible()
         }
+        
+        //show
+        window?.makeKeyAndVisible()
         
     }
 

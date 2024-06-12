@@ -91,33 +91,11 @@ struct Tamagotchi {
             count += (water / 2)
         }
         
-        switch count {
-        case 0..<20:
-            return 1
-        case 20..<30:
-            return 2
-        case 30..<40:
-            return 3
-        case 40..<50:
-            return 4
-        case 50..<60:
-            return 5
-        case 60..<70:
-            return 6
-        case 70..<80:
-            return 7
-        case 80..<90:
-            return 8
-        case 90..<100:
-            return 9
-        default:
-            return 10
-        }
-        
+        return count == 0 ? 1 : count / 10
     }
     
     var levelImage: UIImage? {
-        let lev = level == 10 ? 9 : level
+        let lev = level >= 10 ? 9 : level
         guard let image = UIImage(named: "\(self.type.rawValue)-\(lev)") else {
             return nil
         }

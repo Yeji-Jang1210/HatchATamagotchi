@@ -20,7 +20,7 @@ protocol ConfigurableView {
 class TamagotchiVC: UIViewController, NavigationTitle {
     var navigationTitle: String?
     
-    required init(navigationTitle: String? = nil) {
+    init(navigationTitle: String? = nil) {
         if let navigationTitle {
             self.navigationTitle = navigationTitle
         }
@@ -36,9 +36,14 @@ class TamagotchiVC: UIViewController, NavigationTitle {
         
         view.backgroundColor = DefaultColor.background
         
-        let textAttribute = [NSAttributedString.Key.foregroundColor: DefaultColor.font]
-        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        navigationItem.scrollEdgeAppearance = UINavigationBarAppearance()
+        navigationItem.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: DefaultColor.font]
+        navigationItem.scrollEdgeAppearance?.backgroundColor = DefaultColor.background
+        navigationItem.scrollEdgeAppearance?.shadowColor = .clear
+        
         navigationItem.title = navigationTitle
         navigationController?.navigationBar.tintColor = DefaultColor.tintColor
+
     }
 }

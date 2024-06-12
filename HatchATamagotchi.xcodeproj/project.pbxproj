@@ -32,6 +32,7 @@
 		B81F4EA82C117F7E0061FA51 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA72C117F7E0061FA51 /* CharacterView.swift */; };
 		B81F4EAA2C12B3210061FA51 /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EA92C12B3210061FA51 /* MainTextField.swift */; };
 		B81F4EAC2C12D6CA0061FA51 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F4EAB2C12D6CA0061FA51 /* Message.swift */; };
+		B8454D682C19800900DE4D66 /* LevelUpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8454D672C19800900DE4D66 /* LevelUpType.swift */; };
 		B8E2D0142C15FDCF00009721 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = B8E2D0132C15FDCF00009721 /* SwiftyUserDefaults */; };
 		B8E2D0172C15FE3300009721 /* DefaultsKey+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E2D0162C15FE3300009721 /* DefaultsKey+Extesion.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		B81F4EA72C117F7E0061FA51 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		B81F4EA92C12B3210061FA51 /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
 		B81F4EAB2C12D6CA0061FA51 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B8454D672C19800900DE4D66 /* LevelUpType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpType.swift; sourceTree = "<group>"; };
 		B8E2D0162C15FE3300009721 /* DefaultsKey+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKey+Extesion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 				B81F4EAB2C12D6CA0061FA51 /* Message.swift */,
 				B804EC702C15B4F4008FAD1A /* SettingType.swift */,
 				B804EC752C15C744008FAD1A /* SelectTamagotciVCType.swift */,
+				B8454D672C19800900DE4D66 /* LevelUpType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				B81F4E8E2C11548F0061FA51 /* TamagotchiVC.swift in Sources */,
 				B81F4EA62C117D850061FA51 /* SelectTamagotchiCollectionViewCell.swift in Sources */,
 				B81F4EAA2C12B3210061FA51 /* MainTextField.swift in Sources */,
+				B8454D682C19800900DE4D66 /* LevelUpType.swift in Sources */,
 				B81F4E8C2C1151A10061FA51 /* DefaultLayout.swift in Sources */,
 				B81F4E9A2C115FCF0061FA51 /* PopUpViewController.swift in Sources */,
 				B81F4E982C115F1C0061FA51 /* SelectTamagotchiViewController.swift in Sources */,

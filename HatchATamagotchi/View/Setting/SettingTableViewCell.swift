@@ -22,7 +22,7 @@ class SettingTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCell(){
+    private func configureCell(){
         config.textProperties.font = DefaultFont.accentSmall
         config.secondaryTextProperties.font = DefaultFont.small
         config.imageProperties.tintColor = DefaultColor.tintColor

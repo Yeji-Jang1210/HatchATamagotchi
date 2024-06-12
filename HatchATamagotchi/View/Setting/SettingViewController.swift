@@ -24,6 +24,11 @@ class SettingViewController: TamagotchiVC, ConfigurableView {
         configureLayout()
         configureUI()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+    }
 //MARK: - configure
     func configureHierarchy() {
         view.addSubview(tableView)

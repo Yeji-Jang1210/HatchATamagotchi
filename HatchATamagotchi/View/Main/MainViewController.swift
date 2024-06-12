@@ -13,6 +13,7 @@ import Toast
 class MainViewController: TamagotchiVC, ConfigurableView {
    
 //MARK: - object
+    
     let messageBubbleBackgroundView: UIView = {
         let object = UIView()
         object.backgroundColor = .clear
@@ -49,15 +50,13 @@ class MainViewController: TamagotchiVC, ConfigurableView {
     }()
     
     let feedTextField: MainTextField = {
-        let object = MainTextField()
-        object.setData(placeholder: "밥주세용", buttonTitle: "밥먹기", buttonImage: DefaultIcon.feed.icon)
+        let object = MainTextField(type: LevelUpType.feed)
         object.button.tag = 0
         return object
     }()
     
     let waterTextField: MainTextField = {
-        let object = MainTextField()
-        object.setData(placeholder: "물주세용", buttonTitle: "물먹기", buttonImage: DefaultIcon.drink.icon)
+        let object = MainTextField(type: LevelUpType.water)
         object.button.tag = 1
         return object
     }()
@@ -88,6 +87,7 @@ class MainViewController: TamagotchiVC, ConfigurableView {
 //MARK: - configure
     func configureNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: DefaultIcon.person.icon, style: .done, target: self, action: #selector(settingButtonTapped))
+        
     }
     
     func configureHierarchy() {
@@ -105,9 +105,10 @@ class MainViewController: TamagotchiVC, ConfigurableView {
     func configureLayout() {
 
         messageBubbleBackgroundView.snp.makeConstraints { make in
+            make.top.lessThanOrEqualTo(view.safeAreaLayoutGuide).offset(40)
             make.width.equalToSuperview().multipliedBy(0.6)
             make.height.equalTo(messageBubbleBackgroundView.snp.width).multipliedBy(0.6)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            make.bottom.equalTo(characterView.snp.top).offset(-20)
             make.centerX.equalToSuperview()
         }
         
@@ -123,26 +124,29 @@ class MainViewController: TamagotchiVC, ConfigurableView {
         }
         
         characterView.snp.makeConstraints { make in
-            make.top.equalTo(messageBubbleBackgroundView.snp.bottom).offset(12)
+            make.bottom.equalTo(characterInfoLabel.snp.top).offset(-12)
             make.width.equalTo(messageBubbleBackgroundView.snp.width).multipliedBy(0.8)
             make.centerX.equalToSuperview()
         }
         
         characterInfoLabel.snp.makeConstraints { make in
-            make.top.equalTo(characterView.snp.bottom).offset(12)
+            make.bottom.equalTo(feedTextField.snp.top).offset(-24)
+            make.height.equalTo(24)
             make.centerX.equalToSuperview()
         }
         
         feedTextField.snp.makeConstraints { make in
             make.width.equalToSuperview().multipliedBy(0.7)
-            make.top.equalTo(characterInfoLabel.snp.bottom).offset(30)
+            make.bottom.equalTo(waterTextField.snp.top).offset(-12)
+            make.height.equalTo(36)
             make.centerX.equalToSuperview()
         }
         
         waterTextField.snp.makeConstraints { make in
             make.width.equalToSuperview().multipliedBy(0.7)
-            make.top.equalTo(feedTextField.snp.bottom).offset(12)
             make.centerX.equalToSuperview()
+            make.height.equalTo(36)
+            make.bottom.greaterThanOrEqualTo(view.keyboardLayoutGuide.snp.top).offset(-50)
         }
     }
     
@@ -153,8 +157,15 @@ class MainViewController: TamagotchiVC, ConfigurableView {
     }
 //MARK: - function
     func bindAction(){
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(activeEndEditing))
+        view.addGestureRecognizer(gesture)
+        
         feedTextField.button.addTarget(self, action: #selector(giveCareButtonTapped), for: .touchUpInside)
         waterTextField.button.addTarget(self, action: #selector(giveCareButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func activeEndEditing(){
+        view.endEditing(true)
     }
     
     @objc func settingButtonTapped(){

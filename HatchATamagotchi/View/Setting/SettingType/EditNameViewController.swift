@@ -40,12 +40,12 @@ class EditNameViewController: TamagotchiVC {
     }
 
 //MARK: - configure
-    func configureHierarchy(){
+    private func configureHierarchy(){
         view.addSubview(textField)
         view.addSubview(textFieldLine)
     }
     
-    func configureLayout(){
+    private func configureLayout(){
         textField.snp.makeConstraints { make in
             make.horizontalEdges.top.equalTo(view.safeAreaLayoutGuide).inset(30)
             make.height.equalTo(44)
@@ -58,7 +58,7 @@ class EditNameViewController: TamagotchiVC {
         }
     }
     
-    func configureUI(){
+    private func configureUI(){
         configureNavigationBar()
         textField.text = Defaults.user
         
@@ -66,7 +66,7 @@ class EditNameViewController: TamagotchiVC {
         view.addGestureRecognizer(gesture)
     }
     
-    func configureNavigationBar(){
+    private func configureNavigationBar(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(editUserName))
     }
     

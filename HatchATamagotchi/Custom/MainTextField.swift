@@ -62,6 +62,13 @@ class MainTextField: UIView, ConfigurableView {
         configureUI()
     }
     
+    convenience init(type: LevelUpType) {
+        self.init(frame: .zero)
+        textField.placeholder = type.placeholder
+        button.setTitle(type.buttonTitle, for: .normal)
+        button.setImage(type.buttonImage, for: .normal)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -99,11 +106,5 @@ class MainTextField: UIView, ConfigurableView {
     
     func configureUI() {
         
-    }
-    
-    public func setData(placeholder: String, buttonTitle: String, buttonImage: UIImage?){
-        textField.placeholder = placeholder
-        button.setTitle(buttonTitle, for: .normal)
-        button.setImage(buttonImage, for: .normal)
     }
 }
